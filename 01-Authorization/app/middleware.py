@@ -44,40 +44,6 @@ from functools import wraps
 from django.http import HttpRequest, JsonResponse
 from typing import Any
 
-
-# def authorized(function):
-#     @wraps(function)
-#     def wrap(request: HttpRequest, *args, **kwargs):
-#         token: RequestToken = getRequestToken(request, mutateRequest=True)
-#         print(token)
-
-#         if token is None or token.is_authenticated() is False:
-#             raise JsonException("Unauthorized.", 401)
-
-#         return function(request, token, *args, **kwargs)
-
-#     return wrap
-
-
-# def can(permission):
-#     def decor(function):
-#         @wraps(function)
-#         def wrap(request: HttpRequest, *args, **kwargs):
-#             token: RequestToken = getRequestToken(request, mutateRequest=True)
-
-#             if token is None or token.is_authenticated() is False:
-#                 raise JsonException("Unauthorized.", 401)
-
-#             if token.hasPermission(permission) is False:
-#                 raise JsonException("Forbidden.", 403)
-
-#             return function(request, token, *args, **kwargs)
-
-#         return wrap
-
-#     return decor
-
-
 class RequestToken(object):
     def __init__(self, token: str) -> None:
         self._token: str = token

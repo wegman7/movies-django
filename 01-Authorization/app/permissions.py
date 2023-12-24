@@ -4,7 +4,6 @@ class ReadMessagesPermission(BasePermission):
     def has_permission(self, request, view):
         return request.user.hasPermission('read:messages')
 
-# class CustomPermission(BasePermission):
-#     def has_permission(self, request, view):
-#         print(request.user.hasPermission('read:messages'))
-#         return True
+class ExamplePermission(BasePermission):
+    def has_permission(self, request, view):
+        return request.user.hasPermission('example:permission')
