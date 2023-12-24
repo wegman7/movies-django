@@ -3,7 +3,6 @@ from typing import Any, Optional
 from django.http import HttpRequest
 from rest_framework.authentication import BaseAuthentication
 from jwt import PyJWKClient, decode
-from dotenv import load_dotenv
 
 class JsonException(Exception):
     pass
@@ -16,7 +15,6 @@ class RequestToken:
             self._decoded = self._decode(token)
 
     def _decode(self, token: str) -> Optional[dict[str, Any]]:
-        load_dotenv()
         domain: Optional[str] = os.environ.get("AUTH0_DOMAIN")
         identifier: Optional[str] = os.environ.get("AUTH0_API_IDENTIFIER")
 
