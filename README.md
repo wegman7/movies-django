@@ -38,3 +38,7 @@ The [Responsible Disclosure Program](https://auth0.com/whitehat) details the pro
 
 This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
  
+## Here are some useful links that I added
+
+https://github.com/auth0-samples/auth0-react-samples/tree/master/Sample-01/src
+https://github.com/auth0-samples/auth0-django-api

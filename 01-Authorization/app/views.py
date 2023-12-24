@@ -10,4 +10,4 @@ class HelloWorldView(generics.GenericAPIView):
     permission_classes = (permissions.IsAuthenticated, ReadMessagesPermission)
 
     def get(self, request: HttpRequest):
-        return Response(status=status.HTTP_200_OK, data=bool(request.user and request.user.is_authenticated))
+        return Response(status=status.HTTP_200_OK)
