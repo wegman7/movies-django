@@ -7,8 +7,7 @@ from .permissions import ReadMessagesPermission, ExamplePermission
 
 class HelloWorldView(generics.GenericAPIView):
 
-    # permission_classes = (permissions.IsAuthenticated, ReadMessagesPermission)
+    permission_classes = (permissions.IsAuthenticated, ReadMessagesPermission)
 
     def get(self, request: HttpRequest):
-        print(request.user)
         return Response(status=status.HTTP_200_OK, data=bool(request.user and request.user.is_authenticated))
