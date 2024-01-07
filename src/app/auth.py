@@ -4,8 +4,7 @@ from django.http import HttpRequest
 from rest_framework.authentication import BaseAuthentication
 from jwt import PyJWKClient, decode
 
-class JsonException(Exception):
-    pass
+from .exceptions import JsonException
 
 class RequestToken:
     def __init__(self, token: str) -> None:
@@ -36,7 +35,7 @@ class RequestToken:
                 audience=identifier,
                 issuer=issuer,
             )
-        except Exception as e:  # More specific exception handling is recommended
+        except Exception as e:
             raise JsonException("Could not decode the provided token.", 400)
 
     def __str__(self) -> str:

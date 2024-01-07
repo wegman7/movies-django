@@ -1,9 +1,6 @@
 import logging
 from django.http import JsonResponse
-
-
-class JsonException(Exception):
-    pass
+from .exceptions import JsonException
 
 
 class JsonExceptionMiddleware(object):
@@ -15,6 +12,7 @@ class JsonExceptionMiddleware(object):
         return response
 
     def process_exception(self, request, exception):
+        print('\n\n\n\n\n\nkshdflkasjdlkfjHKSDJFHLKASJDFLKJSDLKFJSDLKFJ\\n\n\n\n\n')
         if not isinstance(exception, JsonException):
             return None
 
